@@ -11,6 +11,8 @@
 
 @interface ViewController () <MKMapViewDelegate>
 @property(nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (nonatomic, weak) IBOutlet UITextField *latitudeField;
+@property (nonatomic, weak) IBOutlet UITextField *longitudeField;
 @end
 
 @implementation ViewController
@@ -19,12 +21,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    annotation.title = @"MASP";
-    annotation.subtitle = @"São Paulo";
-    annotation.coordinate = CLLocationCoordinate2DMake(-23.56136640838073, -46.6562633199172);
-    [self.mapView showAnnotations:@[annotation] animated:YES];
-    [self.mapView selectAnnotation:annotation animated:YES];
+//    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+//    annotation.title = @"MASP";
+//    annotation.subtitle = @"São Paulo";
+//    annotation.coordinate = CLLocationCoordinate2DMake(-23.56136640838073, -46.6562633199172);
+//    [self.mapView showAnnotations:@[annotation] animated:YES];
+//    [self.mapView selectAnnotation:annotation animated:YES];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -49,5 +51,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction)updateMapOnTap:(id)sender{
+    // Later, try to implement it with Geocoder
+    
+    NSLog(@"Latitude %@", _latitudeField.text);
+    NSLog(@"Longitude %@", _longitudeField.text);
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.title = @"MASP";
+    annotation.subtitle = @"São Paulo";
+    annotation.coordinate = CLLocationCoordinate2DMake(-23.56136640838073, -46.6562633199172);
+    [self.mapView showAnnotations:@[annotation] animated:YES];
+    [self.mapView selectAnnotation:annotation animated:YES];
+}
+
 
 @end
