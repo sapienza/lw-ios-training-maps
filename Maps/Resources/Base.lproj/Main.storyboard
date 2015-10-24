@@ -29,6 +29,9 @@
                             <constraint firstItem="h5A-dh-tsl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uGl-Kv-PAD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="h5A-dh-tsl" id="wsk-X1-lIq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
