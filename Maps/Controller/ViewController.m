@@ -11,8 +11,7 @@
 
 @interface ViewController () <MKMapViewDelegate>
 @property(nonatomic, weak) IBOutlet MKMapView *mapView;
-@property (nonatomic, weak) IBOutlet UITextField *latitudeField;
-@property (nonatomic, weak) IBOutlet UITextField *longitudeField;
+@property (nonatomic, weak) IBOutlet UITextField *addres;
 @end
 
 @implementation ViewController
@@ -53,18 +52,35 @@
 }
 
 -(IBAction)updateMapOnTap:(id)sender{
-    // Later, try to implement it with Geocoder
+    NSLog(@"addres %@",  self.addres.text);
+    NSString *addres = self.addres.text;
     
-    NSLog(@"Latitude %@", _latitudeField.text);
-    NSLog(@"Longitude %@", _longitudeField.text);
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString: addres completionHandler:^(NSArray* placemarks, NSError* error){
+        for (CLPlacemark* aPlacemark in placemarks)
+        {
+            // Process the placemark.
+            NSString *latDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.latitude];
+            NSString *lngDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.longitude];
+
+            NSLog(@"lat: %@, lng: %@", latDest1, lngDest1);
+            
+            ///// Parse to double
+            double latitude = [latDest1 doubleValue];
+            double longitude = [lngDest1 doubleValue];
+            
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            annotation.title = @"MASP";
+            annotation.subtitle = @"São Paulo";
+            annotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+            [self.mapView showAnnotations:@[annotation] animated:YES];
+            [self.mapView selectAnnotation:annotation animated:YES];
+            /////
+        }
+    }];
     
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    annotation.title = @"MASP";
-    annotation.subtitle = @"São Paulo";
-    annotation.coordinate = CLLocationCoordinate2DMake(-23.56136640838073, -46.6562633199172);
-    [self.mapView showAnnotations:@[annotation] animated:YES];
-    [self.mapView selectAnnotation:annotation animated:YES];
-}
+    
+    }
 
 
 @end

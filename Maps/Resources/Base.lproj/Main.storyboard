@@ -27,23 +27,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUG-l1-wiF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="194"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bme-7K-fD4">
-                                        <rect key="frame" x="34" y="21" width="63" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Addres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bme-7K-fD4">
+                                        <rect key="frame" x="42" y="21" width="55" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-rv-tAk">
-                                        <rect key="frame" x="34" y="64" width="72" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zv3-TY-ttu">
-                                        <rect key="frame" x="138" y="61" width="432" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6Q-M3-JE8">
                                         <rect key="frame" x="138" y="18" width="432" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -53,26 +42,21 @@
                                         <rect key="frame" x="271" y="112" width="48" height="30"/>
                                         <state key="normal" title="Buscar"/>
                                         <connections>
-                                            <action selector="updateMapOnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nPd-j3-QKu"/>
+                                            <action selector="updateMapOnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g6U-Nl-IiB"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.1075958881004994" blue="0.27777777777777779" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Zv3-TY-ttu" firstAttribute="top" secondItem="V6Q-M3-JE8" secondAttribute="bottom" constant="13" id="0Nl-dm-rXF"/>
                                     <constraint firstItem="bme-7K-fD4" firstAttribute="leading" secondItem="gUG-l1-wiF" secondAttribute="leading" constant="20" id="0fG-p8-fdn"/>
                                     <constraint firstAttribute="bottom" secondItem="aeJ-j0-LDz" secondAttribute="bottom" constant="14" id="7jA-rA-D1x"/>
-                                    <constraint firstItem="Zv3-TY-ttu" firstAttribute="leading" secondItem="4Ta-rv-tAk" secondAttribute="trailing" constant="32" id="9hc-vs-GMQ"/>
-                                    <constraint firstItem="Zv3-TY-ttu" firstAttribute="top" secondItem="4Ta-rv-tAk" secondAttribute="top" id="Eha-0I-KZp"/>
                                     <constraint firstItem="bme-7K-fD4" firstAttribute="top" secondItem="gUG-l1-wiF" secondAttribute="top" constant="20" id="HP9-13-C94"/>
                                     <constraint firstItem="aeJ-j0-LDz" firstAttribute="leading" secondItem="gUG-l1-wiF" secondAttribute="leading" constant="50" id="IMC-E6-nuB"/>
                                     <constraint firstAttribute="trailing" secondItem="aeJ-j0-LDz" secondAttribute="trailing" constant="50" id="Jgw-z3-QGz"/>
                                     <constraint firstAttribute="trailing" secondItem="V6Q-M3-JE8" secondAttribute="trailing" constant="20" id="Jh9-RU-lAe"/>
-                                    <constraint firstItem="4Ta-rv-tAk" firstAttribute="leading" secondItem="bme-7K-fD4" secondAttribute="leading" id="Zr7-Br-sJr"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zv3-TY-ttu" secondAttribute="trailing" constant="20" id="dHX-bv-Kpb"/>
-                                    <constraint firstItem="Zv3-TY-ttu" firstAttribute="leading" secondItem="V6Q-M3-JE8" secondAttribute="leading" id="jgl-Kb-KAz"/>
+                                    <constraint firstItem="V6Q-M3-JE8" firstAttribute="leading" secondItem="bme-7K-fD4" secondAttribute="trailing" constant="30" id="Kux-sB-8Rb"/>
+                                    <constraint firstAttribute="trailing" secondItem="V6Q-M3-JE8" secondAttribute="trailing" constant="30" id="XH6-cO-zGQ"/>
                                     <constraint firstItem="V6Q-M3-JE8" firstAttribute="top" secondItem="bme-7K-fD4" secondAttribute="top" id="sbT-If-K1h"/>
-                                    <constraint firstItem="4Ta-rv-tAk" firstAttribute="centerX" secondItem="bme-7K-fD4" secondAttribute="centerX" id="xTy-i5-Voo"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -89,8 +73,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="latitudeField" destination="V6Q-M3-JE8" id="4L4-Re-u47"/>
-                        <outlet property="longitudeField" destination="Zv3-TY-ttu" id="Qf2-mn-Hut"/>
+                        <outlet property="addres" destination="V6Q-M3-JE8" id="aEr-Ga-OTw"/>
                         <outlet property="mapView" destination="h5A-dh-tsl" id="wsk-X1-lIq"/>
                     </connections>
                 </viewController>
